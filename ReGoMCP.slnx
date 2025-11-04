@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="MCP.Http/MCP.Http.csproj" Id="7128a73e-46ca-430b-a39b-9eed9a52374d" />
+  <Project Path="MCP.Stdio/MCP.Stdio.csproj" Id="1f0855f4-4dad-410d-8a05-4a8ac09e2232" />
+  <Project Path="ReGo.Main/ReGo.Main.csproj" Id="01c80bd0-e236-4971-8461-8becea9f2358" />
+</Solution>
