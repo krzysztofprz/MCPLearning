@@ -11,15 +11,20 @@ namespace MCP.Stdio
         public async static Task Configure(string[] args)
         {
             var builder = Host.CreateApplicationBuilder(args);
+
+            builder.Logging.ClearProviders();
+
             builder.Logging.AddConsole(consoleLogOptions =>
             {
                 // Configure all logs to go to stderr
                 consoleLogOptions.LogToStandardErrorThreshold = LogLevel.Trace;
             });
+
             builder.Services
                 .AddMcpServer()
                 .WithStdioServerTransport()
                 .WithToolsFromAssembly();
+
             await builder.Build().RunAsync();
         }
 

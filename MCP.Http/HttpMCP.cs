@@ -16,11 +16,6 @@ namespace MCP.Http
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Logging.AddConsole(consoleLogOptions =>
-            {
-                // Configure all logs to go to stderr
-                consoleLogOptions.LogToStandardErrorThreshold = LogLevel.Trace;
-            });
 
             builder.Services.AddCors(options =>
             {
@@ -58,13 +53,14 @@ namespace MCP.Http
                 .ConfigureResource(resource => resource.AddService(builder.Environment.ApplicationName))
                 .WithTracing(b => b.AddSource("*")
                     .AddAspNetCoreInstrumentation()
-                    .AddHttpClientInstrumentation())
+                    .AddHttpClientInstrumentation()
+                    .AddConsoleExporter())
                 .WithMetrics(b => b.AddMeter("*")
                     .AddAspNetCoreInstrumentation()
                     .AddHttpClientInstrumentation()
                     .AddConsoleExporter((exporterOptions, metricReaderOptions) =>
                     {
-                        metricReaderOptions.PeriodicExportingMetricReaderOptions.ExportIntervalMilliseconds = 1000;
+                        metricReaderOptions.PeriodicExportingMetricReaderOptions.ExportIntervalMilliseconds = 1000 * 60;
                     }))
                 .WithLogging()
                 .UseOtlpExporter();
