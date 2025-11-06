@@ -3,7 +3,8 @@ using MCP.Docker;
 using MCP.Http;
 using MCP.Stdio;
 
-// npx @modelcontextprotocol/inspector dotnet run --project "./ReGo.Main/ReGo.Main.csproj"
+Console.WriteLine();
+// npx @modelcontextprotocol/inspector dotnet run --project "./MCP.Main/MCP.Main.csproj"
 //await StdioMCP.Configure(args);
 
 // npx @modelcontextprotocol/inspector --connect http://localhost:3001

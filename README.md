@@ -1,1 +1,1 @@
-# ReGoMCP
+# MCPMain

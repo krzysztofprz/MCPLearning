@@ -1,10 +1,10 @@
-@ReGo.Main_HostAddress = http://localhost:5171
+@MCP.Main_HostAddress = http://localhost:5171
 
-GET {{ReGo.Main_HostAddress}}/weatherforecast/
+GET {{MCP.Main_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
 
-GET {{ReGo.Main_HostAddress}}/mcp
+GET {{MCP.Main_HostAddress}}/mcp
 Accept: text/event-stream
 Mcp-Session-Id: "4ad83d8f8c0105f748dc183340112ef3c6b1a0cb7e45975cfb78d787ee96518f"
